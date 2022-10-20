@@ -1,0 +1,3 @@
+My cipher = All letters are shifted over the number of positions of the index of the first letter subtracted from 26. 
+
+i.e. if first letter is 'c', then all letters are shifted 23 letters over. If a number must shift over further than Z (26), then letters are shifted around to the beginning.
