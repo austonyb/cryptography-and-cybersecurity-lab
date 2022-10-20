@@ -26,7 +26,7 @@ module.exports = {
   
       //look for a user with the username passed in
       for (let i = 0; i < users.length; i++) {
-        if (users[i].email === email) {
+        if (users[i].username === username) {
           userData = users[i]
         }
       }
@@ -37,7 +37,7 @@ module.exports = {
         bcrypt.compare(password, userData.password, (error, success) => {
           if (!error) {
             if (success) {
-              res.status(200).send({success: true, username: username, email: email, firstName: firstName, lastName: lastName})
+              res.status(200).send({success: true, username: userData.username, email: userData.email, firstName: userData.firstName, lastName: userData.lastName})
             } else {
               res.status(200).send({success: false, message: 'bad password'})
             }
